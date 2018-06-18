@@ -29,7 +29,7 @@ def _batch_mv(bmat, bvec):
     to a batch shape. They are not necessarily assumed to have the same batch shape,
     just ones which can be broadcasted.
     """
-    n = bvec.size(-1)
+    n = bmat.size(-1)
     batch_shape = _get_batch_shape(bmat, bvec)
 
     # to conform with `torch.bmm` interface, both bmat and bvec should have `.dim() == 3`
